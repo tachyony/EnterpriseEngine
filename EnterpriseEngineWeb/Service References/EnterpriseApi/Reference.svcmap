@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="28fbb125-6a1c-4321-8640-c9a4d2e746e9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EnterpriseApi.disco" MetadataType="Disco" ID="9726ad2d-f8eb-4fc9-8c11-3ea47693f61c" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?disco" />
+    <MetadataFile FileName="EnterpriseApi.xsd" MetadataType="Schema" ID="324a0f3e-8079-4ad9-b39f-fc2a4817194a" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?xsd=xsd0" />
+    <MetadataFile FileName="EnterpriseApi1.xsd" MetadataType="Schema" ID="5fd10ee2-9aad-438a-87f6-73e98e58f5e1" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?xsd=xsd1" />
+    <MetadataFile FileName="EnterpriseApi.wsdl" MetadataType="Wsdl" ID="ff3dabc2-b2cf-4d39-98c1-8a6cd0ffda05" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?wsdl" />
+    <MetadataFile FileName="EnterpriseApi2.xsd" MetadataType="Schema" ID="1f8c0029-97ed-4b62-8aeb-d7871ce69221" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
