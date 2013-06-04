@@ -1,4 +1,7 @@
-﻿namespace EnterpriseEngineTest
+﻿// <copyright file="Form1.cs" company="EnterpriseEngine">
+// Copyright © EnterpriseEngine 2013
+// </copyright>
+namespace EnterpriseEngineTest
 {
     using System;
     using System.Collections.Generic;
@@ -16,11 +19,17 @@
     public partial class Form1 : Form
     {
         /// <summary>
+        /// Data Logger
+        /// </summary>
+        private DataLogger logger;
+        
+        /// <summary>
         /// Initializes a new instance of the <see cref="Form1"/> class.
         /// </summary>
         public Form1()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+            this.logger = new DataLogger();
         }
 
         /// <summary>
@@ -28,10 +37,9 @@
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            DataLogger logger = new DataLogger();
-            logger.LogAudit(this.textBox1.Text);
+            this.logger.LogAudit(this.textBox1.Text);
         }
 
         /// <summary>
@@ -39,10 +47,9 @@
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
-            DataLogger logger = new DataLogger();
-            logger.Log(this.textBox1.Text);
+            this.logger.Log(this.textBox1.Text);
         }
     }
 }

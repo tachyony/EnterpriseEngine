@@ -11,7 +11,7 @@ namespace EnterpriseEngine.SqliteLogging
     /// <summary>
     /// IData Logger
     /// </summary>
-    interface IDataLogger
+    internal interface IDataLogger
     {
         /// <summary>
         /// Logs the specified message.

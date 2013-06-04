@@ -1,7 +1,7 @@
-﻿// <copyright file="LogMessage.cs" company="EnterpriseEngine">
+﻿// <copyright file="AuditMessage.cs" company="EnterpriseEngine">
 // Copyright © EnterpriseEngine 2013
 // </copyright>
-namespace EnterpriseEngine.SqliteLogging
+namespace EnterpriseEngine.SqliteLogging.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -11,12 +11,12 @@ namespace EnterpriseEngine.SqliteLogging
     /// <summary>
     /// Log Message
     /// </summary>
-    public class LogMessage
+    public class AuditMessage
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LogMessage"/> class.
+        /// Initializes a new instance of the <see cref="AuditMessage"/> class.
         /// </summary>
-        public LogMessage()
+        public AuditMessage()
         {
         }
 
@@ -26,7 +26,7 @@ namespace EnterpriseEngine.SqliteLogging
         /// <value>
         /// The id.
         /// </value>
-        public int Id
+        public virtual int Id
         {
             get;
             set;
@@ -38,7 +38,7 @@ namespace EnterpriseEngine.SqliteLogging
         /// <value>
         /// The message.
         /// </value>
-        public string Message
+        public virtual string Message
         {
             get;
             set;
