@@ -1,4 +1,7 @@
-﻿namespace EnterpriseEngine.SqliteLogging
+﻿// <copyright file="DataLogger.cs" company="EnterpriseEngine">
+// Copyright © EnterpriseEngine 2013
+// </copyright>
+namespace EnterpriseEngine.SqliteLogging
 {
     using System;
     using System.Collections.Generic;
@@ -23,9 +26,8 @@
         /// <param name="message">The message.</param>
         public void Log(string message)
         {
-            LogModelContainer container = new LogModelContainer();
-            container.Logs.AddObject(new Log() { Message = message });
-            container.SaveChanges();
+            LogMessage logMessage = new LogMessage();
+            logMessage.Message = message;
         }
 
         /// <summary>
@@ -34,9 +36,8 @@
         /// <param name="message">The message.</param>
         public void LogAudit(string message)
         {
-            LogModelContainer container = new LogModelContainer();
-            container.Audits.AddObject(new Audit() { Message = message });
-            container.SaveChanges();
+            AuditMessage auditMessage = new AuditMessage();
+            auditMessage.Message = message;
         }
     }
 }

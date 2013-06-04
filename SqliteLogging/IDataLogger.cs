@@ -1,4 +1,7 @@
-﻿namespace EnterpriseEngine.SqliteLogging
+﻿// <copyright file="IDataLogger.cs" company="EnterpriseEngine">
+// Copyright © EnterpriseEngine 2013
+// </copyright>
+namespace EnterpriseEngine.SqliteLogging
 {
     using System;
     using System.Collections.Generic;
