@@ -18,6 +18,13 @@ namespace EnterpriseEngineApi
     public class EnterpriseApi : IEnterpriseApi
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="EnterpriseApi"/> class.
+        /// </summary>
+        public EnterpriseApi()
+        {
+        }
+
+        /// <summary>
         /// Gets the data using data contract.
         /// </summary>
         /// <param name="decision">The decision.</param>
@@ -32,18 +39,33 @@ namespace EnterpriseEngineApi
                             IfFunc(
                                 IfFunc(
                                     IfFunc(
-                                        NestIfFunc(decision.CheckBox[63]),
-                                        NestIfFunc(decision.CheckBox[64]),
+                                        IfFunc(
+                                            NestIfFunc(decision.CheckBox[127]),
+                                            NestIfFunc(decision.CheckBox[128]),
+                                            decision.CheckBox[63]),
+                                        IfFunc(
+                                            NestIfFunc(decision.CheckBox[129]),
+                                            NestIfFunc(decision.CheckBox[130]),
+                                            decision.CheckBox[64]),
                                         decision.CheckBox[31]),
                                     IfFunc(
-                                        NestIfFunc(decision.CheckBox[65]),
+                                        IfFunc(
+                                            NestIfFunc(decision.CheckBox[131]),
+                                            NestIfFunc(decision.CheckBox[132]),
+                                            decision.CheckBox[65]),
                                         NestIfFunc(decision.CheckBox[66]),
                                         decision.CheckBox[32]),
                                     decision.CheckBox[15]),
                                 IfFunc(
                                     IfFunc(
-                                        NestIfFunc(decision.CheckBox[67]),
-                                        NestIfFunc(decision.CheckBox[68]),
+                                        IfFunc(
+                                            NestIfFunc(decision.CheckBox[69]),
+                                            NestIfFunc(decision.CheckBox[69]),
+                                            decision.CheckBox[67]),
+                                        IfFunc(
+                                            NestIfFunc(decision.CheckBox[69]),
+                                            NestIfFunc(decision.CheckBox[69]),
+                                            decision.CheckBox[68]),
                                         decision.CheckBox[33]),
                                     IfFunc(
                                         NestIfFunc(decision.CheckBox[69]),
@@ -281,27 +303,20 @@ namespace EnterpriseEngineApi
         /// <returns></returns>
         private Func<int, bool> NestIfFunc(bool condition)
         {
-            return IfFunc(ArrDecision, ArrDecision, condition);
-        }
+            Func<int, bool> decisionFunc = ((amount) =>
+            {
+                Random random = new Random();
+                if (random.Next(-10, 10) > amount)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            });
 
-        /// <summary>
-        /// Arrs the decision.
-        /// </summary>
-        /// <param name="amount">The amount.</param>
-        /// <returns>
-        /// The result bool
-        /// </returns>
-        private bool ArrDecision(int amount)
-        {
-            Random random = new Random();
-            if (random.Next(-10, 10) > amount)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return IfFunc(decisionFunc, decisionFunc, condition);
         }
     }
 }

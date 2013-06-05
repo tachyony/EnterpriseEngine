@@ -13,7 +13,6 @@ namespace EnterpriseEngineTest
     using System.Text;
     using System.Windows.Forms;
     using EnterpriseEngine.SqliteLogging;
-    using EnterpriseEngine.Test.EnterpriseApi;
     using System.Threading;
 
     /// <summary>
@@ -62,7 +61,7 @@ namespace EnterpriseEngineTest
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void Button3_Click(object sender, EventArgs e)
         {
-            DecisionType decType = new DecisionType();
+            EnterpriseEngineApi.DecisionType decType = new EnterpriseEngineApi.DecisionType();
             decType.Result = false;
             decType.RandomString = "Foam";
             decType.CheckBox = new List<bool>();
@@ -71,59 +70,33 @@ namespace EnterpriseEngineTest
                 decType.CheckBox.Add(true);
             }
 
-            Stopwatch sw = Stopwatch.StartNew();
             try
             {
-                int g = 0;
-                int h = 0;
-                for (int j = 0; j < 18; j++)
+                for (int j = 0; j < 20; j++)
                 {
                     Thread ts = new Thread(new ThreadStart(() =>
                     {
+                        int h = 0;
                         for (int i = 0; i < 100; i++)
                         {
-                            EnterpriseApiClient eapiClient = new EnterpriseApiClient();
-                            eapiClient.Open();
-                            DecisionType decisionResult = eapiClient.GetDecision(decType);
-
-                            // Trace.WriteLine(decisionResult.Result.ToString() + "::" + decisionResult.RandomString);
+                            EnterpriseEngineApi.EnterpriseApi eapiClient = new EnterpriseEngineApi.EnterpriseApi();
+                            EnterpriseEngineApi.DecisionType decisionResult = eapiClient.GetDecision(decType);
                             if (decisionResult.Result)
                             {
                                 h++;
                             }
-
-                            g++;
-                            eapiClient.Close();
                         }
+
+                        Trace.WriteLine(h.ToString());
                     }));
                     ts.IsBackground = true;
                     ts.Start();
                 }
-
-                for (int i = 0; i < 200; i++)
-                {
-                    EnterpriseApiClient eapiClient = new EnterpriseApiClient();
-                    eapiClient.Open();
-                    DecisionType decisionResult = eapiClient.GetDecision(decType);
-                    
-                    // Trace.WriteLine(decisionResult.Result.ToString() + "::" + decisionResult.RandomString);
-                    if (decisionResult.Result)
-                    {
-                        h++;
-                    }
-
-                    g++;
-                    eapiClient.Close();
-                }
-                
-                Trace.WriteLine(h.ToString() + "/" + g.ToString());
             }
             catch (Exception eek)
             {
                 Trace.WriteLine(eek.Message);
             }
-
-            Trace.WriteLine(sw.ElapsedMilliseconds.ToString());
         }
 
         /// <summary>
