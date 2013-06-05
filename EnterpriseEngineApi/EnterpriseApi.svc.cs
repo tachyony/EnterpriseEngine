@@ -14,6 +14,7 @@ namespace EnterpriseEngineApi
     /// <summary>
     /// Enterprise Api
     /// </summary>
+    [ServiceBehavior(ConcurrencyMode=ConcurrencyMode.Multiple, InstanceContextMode=InstanceContextMode.PerCall)]
     public class EnterpriseApi : IEnterpriseApi
     {
         /// <summary>

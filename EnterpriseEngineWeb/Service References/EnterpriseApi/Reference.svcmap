@@ -24,10 +24,11 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="EnterpriseApi.disco" MetadataType="Disco" ID="9726ad2d-f8eb-4fc9-8c11-3ea47693f61c" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?disco" />
-    <MetadataFile FileName="EnterpriseApi.xsd" MetadataType="Schema" ID="324a0f3e-8079-4ad9-b39f-fc2a4817194a" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?xsd=xsd0" />
-    <MetadataFile FileName="EnterpriseApi1.xsd" MetadataType="Schema" ID="5fd10ee2-9aad-438a-87f6-73e98e58f5e1" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?xsd=xsd1" />
-    <MetadataFile FileName="EnterpriseApi.wsdl" MetadataType="Wsdl" ID="ff3dabc2-b2cf-4d39-98c1-8a6cd0ffda05" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?wsdl" />
     <MetadataFile FileName="EnterpriseApi2.xsd" MetadataType="Schema" ID="1f8c0029-97ed-4b62-8aeb-d7871ce69221" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?xsd=xsd2" />
+    <MetadataFile FileName="EnterpriseApi1.xsd" MetadataType="Schema" ID="5fd10ee2-9aad-438a-87f6-73e98e58f5e1" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?xsd=xsd1" />
+    <MetadataFile FileName="EnterpriseApi3.xsd" MetadataType="Schema" ID="3e07fa07-45d9-45f9-a35a-40f55bf369ea" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?xsd=xsd3" />
+    <MetadataFile FileName="EnterpriseApi.xsd" MetadataType="Schema" ID="324a0f3e-8079-4ad9-b39f-fc2a4817194a" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?xsd=xsd0" />
+    <MetadataFile FileName="EnterpriseApi.wsdl" MetadataType="Wsdl" ID="ff3dabc2-b2cf-4d39-98c1-8a6cd0ffda05" SourceId="1" SourceUrl="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -35,6 +35,12 @@ namespace EnterpriseEngineWeb.Controllers
             DecisionType decType = new DecisionType();
             decType.Result = false;
             decType.RandomString = Request.Form["TheWord"];
+            decType.CheckBox = new List<bool>();
+            for (int h = 0; h < 132; h++)
+            {
+                decType.CheckBox.Add(Request.Form["RadioButtonYes" + h].ToString() == "Yes");
+            }
+
             try
             {
                 EnterpriseApiClient eapiClient = new EnterpriseApiClient("EnterpriseApi");

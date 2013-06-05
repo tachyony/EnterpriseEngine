@@ -23,6 +23,9 @@ namespace EnterpriseEngineWeb.EnterpriseApi {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<bool> CheckBoxField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RandomStringField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -35,6 +38,19 @@ namespace EnterpriseEngineWeb.EnterpriseApi {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<bool> CheckBox {
+            get {
+                return this.CheckBoxField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CheckBoxField, value) != true)) {
+                    this.CheckBoxField = value;
+                    this.RaisePropertyChanged("CheckBox");
+                }
             }
         }
         

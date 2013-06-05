@@ -57,5 +57,18 @@ namespace EnterpriseEngineApi
             get;
             set;
         }
+
+        /// <summary>
+        /// Gets or sets the check box.
+        /// </summary>
+        /// <value>
+        /// The check box array.
+        /// </value>
+        [DataMember]
+        public List<bool> CheckBox
+        {
+            get;
+            set;
+        }
     }
 }

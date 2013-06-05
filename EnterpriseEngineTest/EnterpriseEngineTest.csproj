@@ -11,7 +11,8 @@
     <RootNamespace>EnterpriseEngine.Test</RootNamespace>
     <AssemblyName>EnterpriseEngineTest</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -36,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +57,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\EnterpriseApi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -77,12 +85,49 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\EnterpriseApi\EnterpriseApi.wsdl" />
+    <None Include="Service References\EnterpriseApi\EnterpriseApi.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EnterpriseApi\EnterpriseApi1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EnterpriseApi\EnterpriseApi2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EnterpriseApi\EnterpriseApi3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EnterpriseApi\EnterpriseEngine.Test.EnterpriseApi.DecisionType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SqliteLogging\SqliteLogging.csproj">
       <Project>{103816A8-DB8F-47AB-88EA-8030E1523059}</Project>
       <Name>SqliteLogging</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EnterpriseApi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EnterpriseApi\EnterpriseApi.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EnterpriseApi\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EnterpriseApi\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EnterpriseApi\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -288,6 +288,9 @@
     <None Include="Service References\EnterpriseApi\EnterpriseApi.disco" />
     <None Include="Service References\EnterpriseApi\configuration91.svcinfo" />
     <None Include="Service References\EnterpriseApi\configuration.svcinfo" />
+    <None Include="Service References\EnterpriseApi\EnterpriseApi3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\EnterpriseApi\EnterpriseEngineWeb.EnterpriseApi.DecisionType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
