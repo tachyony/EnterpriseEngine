@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/EnterpriseEngineApi/EnterpriseApi.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EnterpriseEngineApi" />
+  <xs:element name="GetDecision">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EnterpriseEngineApi" minOccurs="0" name="decision" nillable="true" type="q1:DecisionType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDecisionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EnterpriseEngineApi" minOccurs="0" name="GetDecisionResult" nillable="true" type="q2:DecisionType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
