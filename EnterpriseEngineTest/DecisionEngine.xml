@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<DecisionEngine>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+  <Decision decisionType="Random">
+    <Min>-10</Min>
+    <Max>10</Max>
+  </Decision>
+</DecisionEngine>

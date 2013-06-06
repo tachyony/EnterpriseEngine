@@ -61,20 +61,23 @@ namespace EnterpriseEngineTest
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void Button3_Click(object sender, EventArgs e)
         {
-            EnterpriseEngineApi.DecisionType decType = new EnterpriseEngineApi.DecisionType();
-            decType.Result = false;
-            decType.RandomString = "Foam";
-            decType.CheckBox = new List<bool>();
-            for (int h = 0; h < 132; h++)
-            {
-                decType.CheckBox.Add(true);
-            }
-
             try
             {
+                EnterpriseEngineApi.DecisionType decType = new EnterpriseEngineApi.DecisionType();
+                decType.Result = false;
+                decType.RandomString = "Foam";
+                decType.CheckBox = new List<bool>();
+                for (int h = 0; h < 132; h++)
+                {
+                    decType.CheckBox.Add(true);
+                }
+
+                Stopwatch sw = Stopwatch.StartNew();
+                EventWaitHandle[] whs = new EventWaitHandle[20];
                 for (int j = 0; j < 20; j++)
                 {
-                    Thread ts = new Thread(new ThreadStart(() =>
+                    whs[j] = new EventWaitHandle(false, EventResetMode.ManualReset);
+                    Thread ts = new Thread(new ParameterizedThreadStart((num) =>
                     {
                         int h = 0;
                         EnterpriseEngineApi.EnterpriseApi eapiClient = new EnterpriseEngineApi.EnterpriseApi();
@@ -88,11 +91,18 @@ namespace EnterpriseEngineTest
                         }
 
                         Trace.WriteLine((h > 50).ToString() + (h-50).ToString());
-                        Thread.Sleep(333);
+                        whs[(int)num].Set();
                     }));
                     ts.IsBackground = true;
-                    ts.Start();
+                    ts.Start(j);
                 }
+
+                for (int k = 0; k < 20; k++)
+                {
+                    whs[k].WaitOne();
+                }
+
+                Trace.WriteLine("Time=" + sw.ElapsedMilliseconds);
             }
             catch (Exception eek)
             {
