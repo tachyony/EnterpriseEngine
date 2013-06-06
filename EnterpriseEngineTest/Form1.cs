@@ -77,9 +77,9 @@ namespace EnterpriseEngineTest
                     Thread ts = new Thread(new ThreadStart(() =>
                     {
                         int h = 0;
+                        EnterpriseEngineApi.EnterpriseApi eapiClient = new EnterpriseEngineApi.EnterpriseApi();
                         for (int i = 0; i < 100; i++)
                         {
-                            EnterpriseEngineApi.EnterpriseApi eapiClient = new EnterpriseEngineApi.EnterpriseApi();
                             EnterpriseEngineApi.DecisionType decisionResult = eapiClient.GetDecision(decType);
                             if (decisionResult.Result)
                             {
@@ -87,7 +87,8 @@ namespace EnterpriseEngineTest
                             }
                         }
 
-                        Trace.WriteLine(h.ToString());
+                        Trace.WriteLine((h > 50).ToString() + (h-50).ToString());
+                        Thread.Sleep(333);
                     }));
                     ts.IsBackground = true;
                     ts.Start();
